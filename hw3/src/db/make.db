@@ -1,0 +1,6 @@
+PKGFLAG   =
+EXTHDRS   = dbTable.h
+EXTRAOBJS =
+
+include ../Makefile.in
+include ../Makefile.lib

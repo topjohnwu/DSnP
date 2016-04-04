@@ -1,0 +1,43 @@
+dbr test_hw1.csv
+dbp -t
+dbap -r 3 -
+dbap -c 7 3 4 - 1
+dbp -t
+dbp 3 2
+dbp 3 1
+dbp 3 4
+dbp -r 0
+dbp -c 2
+dbav 1
+dbc 0
+dbd -r 3
+dbp -t
+dbap -c 4 3 5 1
+dbp -t
+dbp -s
+dbd -c 1
+dbp -t
+dbma 0
+dbmi 1
+dbsort 0 1 2
+dbp -t
+dbsort 1
+dbp -t
+dbsort 2
+dbp -t
+dbsum 2
+dbp -s
+dbapp -col -
+dbp -t
+dbmax 2
+dbmin 2
+dbsum 2
+dbcount 2
+dbave 2
+dbmax 3
+dbmin 3
+dbsum 3
+dbcount 3
+dbave 3
+dbp 3 3
+q -f

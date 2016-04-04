@@ -1,0 +1,15 @@
+{
+	"SublimeLinter":
+	{
+		"linters":
+		{
+			"clang":
+			{
+				"include_dirs":
+				[
+					"${project_folder}/include"
+				]
+			}
+		}
+	}
+}

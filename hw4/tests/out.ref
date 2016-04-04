@@ -1,0 +1,1531 @@
+###########
+#   do1   #
+###########
+mtest> mtreset 280
+
+mtest> mtnew 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 136
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+ooo
+Array list ---
+
+
+mtest> mtdel -r 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 136
+* Recycle list          : 
+[  0] = 2         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+
+
+mtest> mtnew 5 -a 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 6
+* Free mem in last block: 136
+* Recycle list          : 
+[  0] = 2         [  2] = 5         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+ooooo
+
+mtest> mtdel -r 2 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 6
+* Free mem in last block: 136
+* Recycle list          : 
+[  0] = 2         [  2] = 5         [  3] = 2         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+oooxx
+
+mtest> mtnew -a 1 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 7
+* Free mem in last block: 224
+* Recycle list          : 
+[  0] = 2         [  2] = 5         [  3] = 2         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+oooxxooo
+
+mtest> mtnew -a 5 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 48
+* Recycle list          : 
+[  0] = 4         [  2] = 5         [  3] = 2         [  4] = 1         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+oooxxoooooo
+
+Requested memory (320) is greater than block size(280). Exception raised...
+mtest> mtnew -a 7 2
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 48
+* Recycle list          : 
+[  0] = 4         [  2] = 5         [  3] = 2         [  4] = 1         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+oooxxoooooo
+
+mtest> mtdel -r 8 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 48
+* Recycle list          : 
+[  0] = 4         [  1] = 2         [  2] = 5         [  3] = 3         
+[  4] = 1         [  5] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+ooxxxxxoxoo
+
+Size of array list (11) is <= 12!!
+Illegal option!! (12)
+mtest> mtdel -i 12 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 280 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 48
+* Recycle list          : 
+[  0] = 4         [  1] = 2         [  2] = 5         [  3] = 3         
+[  4] = 1         [  5] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxx
+Array list ---
+ooxxxxxoxoo
+
+mtest> q -f
+
+
+
+###########
+#   do2   #
+###########
+mtest> mtn 10
+
+mtest> mtn 5 -a 256
+
+mtest> mtn 5 -a 512
+
+mtest> mtd -i 7 -a
+
+mtest> mtd -i 0 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 4
+* Free mem in last block: 43000
+* Recycle list          : 
+[256] = 1         [512] = 1         [197] = 1         [464] = 2         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooooooooo
+Array list ---
+xooooooxoo
+
+mtest> q -f
+
+
+
+###########
+#   do3   #
+###########
+mtest> mtr 120
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 120
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 24
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+o
+
+mtest> mtn 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 2
+* Free mem in last block: 72
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+o
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 24
+* Recycle list          : 
+[  1] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+oo
+
+mtest> mtn -a 1 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 24
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+ooo
+
+mtest> 
+mtest> mtr 90
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 96 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 96
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 96 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 0
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+o
+
+mtest> mtn 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 96 Bytes
+* Number of blocks      : 2
+* Free mem in last block: 48
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+o
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 96 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 0
+* Recycle list          : 
+[  0] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+oo
+
+mtest> mtn -a 1 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 96 Bytes
+* Number of blocks      : 4
+* Free mem in last block: 40
+* Recycle list          : 
+[  0] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+ooo
+
+mtest> 
+mtest> q -f
+
+
+
+###########
+#   do4   #
+###########
+Illegal block size (0)!!
+Illegal option!! (0)
+mtest> mtr 0
+
+Illegal block size (39)!!
+Illegal option!! (39)
+mtest> mtr 39
+
+Illegal block size (40)!!
+Illegal option!! (40)
+mtest> mtr 40
+
+mtest> mtn 1
+
+mtest> mtn 1 -a 1
+
+Illegal option!! (0)
+mtest> mtn 1 -a 0
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 65432
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+o
+
+Missing option!!
+mtest> MTD
+
+Missing option!!
+mtest> mtd -a
+
+mtest> mtd -r 4
+
+mtest> help mtn
+Usage: MTNew <(size_t numObjects)> [-Array (size_t arraySize)]
+
+mtest> mtn 5
+
+mtest> mtr 500
+
+mtest> mtn 5
+
+Size of array list is 0!!
+Illegal option!! (-Ran)
+mtest> mtd -a -Ran 3
+
+Illegal option!! (-3)
+mtest> mtd -r -3
+
+mtest> mtd -r 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 264
+* Recycle list          : 
+[  0] = 3         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+xxoox
+Array list ---
+
+
+mtest> mtn 123
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 13
+* Free mem in last block: 264
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+xxooxooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooo
+Array list ---
+
+
+Illegal option!! (-r)
+mtest> mtd -r -r 23
+
+Extra option!! (-r)
+mtest> mtd -r 23 -r
+
+mtest> mtd -r 23
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 13
+* Free mem in last block: 264
+* Recycle list          : 
+[  0] = 23        
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+xxxoxooooooooxooxxxoxooooooxoooxoooxooooooooooxooo
+oxoooooooooxoooxooooxooooooxooxxoooooooooxooooooxo
+ooxooooooooooooooxoooxooooox
+Array list ---
+
+
+Extra option!! (-i)
+mtest> mtd -r 23 -i 5 -a
+
+Requested memory (43968) is greater than block size(504). Exception raised...
+mtest> mtn 123 -a 999
+
+Illegal option!! (0)
+mtest> mtn 123 -a 0
+
+mtest> mtn 123 -a 10
+
+mtest> mtd -ARR -i 54
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 136
+* Free mem in last block: 56
+* Recycle list          : 
+[  0] = 23        [  1] = 122       [  5] = 1         [ 10] = 1         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+xxxoxooooooooxooxxxoxooooooxoooxoooxooooooooooxooo
+oxoooooooooxoooxooooxooooooxooxxoooooooooxooooooxo
+ooxooooooooooooooxoooxooooox
+Array list ---
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+ooooxooooooooooooooooooooooooooooooooooooooooooooo
+ooooooooooooooooooooooo
+
+mtest> mtd -a -r 100
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 136
+* Free mem in last block: 56
+* Recycle list          : 
+[  0] = 23        [  1] = 122       [  5] = 1         [ 10] = 70        
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+xxxoxooooooooxooxxxoxooooooxoooxoooxooooooooooxooo
+oxoooooooooxoooxooooxooooooxooxxoooooooooxooooooxo
+ooxooooooooooooooxoooxooooox
+Array list ---
+ooxoxooxxoxoxooxooxoxooxooxxxxooxxxxxxooxoxxoxxxox
+oxoxxoxooxxooxxxxoxoooxooxxoxoxxxoxoooxoxoxxxoxoox
+xxoxxxooxxxxxxxxxxoxoxo
+
+mtest> mtn 60 -a 11
+
+mtest> mtn 60 -a 10
+
+mtest> mtr
+
+mtest> mtn 123 -a 10
+
+mtest> mtd -ARR -i 54
+
+mtest> mtd -a -r 100
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 123
+* Free mem in last block: 56
+* Recycle list          : 
+[  1] = 122       [ 10] = 67        
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+xoooxoxoxxoxxxoxxoxxxxxooxoxxxxoooxoxxxoxoooxoooxo
+ooooxxxxoooxxxxxoxooxxxxoooxxxxoxoxoxoxoxxxxoooxxo
+xoxooooxoxoxxxooxoxxxox
+
+mtest> mtn 60 -a 10
+
+Extra option!! (-i)
+mtest> mtn 60 -a 10 -i 3
+
+mtest> mtn -a 10 60
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 176
+* Free mem in last block: 56
+* Recycle list          : 
+[  1] = 175       
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+xoooxoxoxxoxxxoxxoxxxxxooxoxxxxoooxoxxxoxoooxoooxo
+ooooxxxxoooxxxxxoxooxxxxoooxxxxoxoxoxoxoxxxxoooxxo
+xoxooooxoxoxxxooxoxxxoxooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+ooooooooooooooooooooooooooooooooooooooooooo
+
+mtest> mtr 1234
+
+Illegal block size (-123)!!
+Illegal option!! (-123)
+mtest> mtr -123
+
+mtest> mtr 100000
+
+mtest> mtn 60 -a 10
+
+Requested memory (225728) is greater than block size(100000). Exception raised...
+mtest> mtn 30 -a 5130
+
+mtest> mtn 80 -a 2058
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 100000 Bytes
+* Number of blocks      : 81
+* Free mem in last block: 9440
+* Recycle list          : 
+[1661] = 1         [214] = 79        
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooo
+
+Illegal option!! (-r)
+mtest> mtn -r 20 -a
+
+Illegal option!! (-r)
+mtest> mtn -r 50 -a
+
+mtest> mtn 60 -a 10
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 100000 Bytes
+* Number of blocks      : 82
+* Free mem in last block: 82528
+* Recycle list          : 
+[1661] = 1         [214] = 79        
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+
+
+Requested memory (214640) is greater than block size(100000). Exception raised...
+mtest> mtn 30 -a 4878
+
+mtest> mtn 80 -a 2058
+
+mtest> mtn 1 -a 266
+
+mtest> mtn 60 -a 11
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 100000 Bytes
+* Number of blocks      : 163
+* Free mem in last block: 58528
+* Recycle list          : 
+[1875] = 1         [1661] = 1         [214] = 159       
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+ooooooooooooooooooooooooooooooooooooooooo
+
+Requested memory (214688) is greater than block size(100000). Exception raised...
+mtest> mtn 30 -a 4879
+
+mtest> mtn 80 -a 2059
+
+mtest> mtn 10 -a 10
+
+mtest> mtn 32 -a 266
+
+mtest> mtn 54 -a 522
+
+mtest> mtn 76 -a 778
+
+mtest> mtn 98 -a 1034
+
+Requested memory (152952) is greater than block size(100000). Exception raised...
+mtest> mtn 200 -a 3476
+
+mtest> mtd -r 3000 -a
+
+Requested memory (102264) is greater than block size(100000). Exception raised...
+mtest> mtn 218 -a 2324
+
+mtest> mtn 170 -a 404
+
+mtest> mtn 64 -a 532
+
+mtest> mtn 192 -a 660
+
+mtest> mtn 2 -a 1172
+
+mtest> mtn 130 -a 1300
+
+mtest> mtn 24 -a 1428
+
+mtest> mtd -r 300 -a
+
+mtest> mtn 86 -a 788
+
+mtest> mtn 214 -a 916
+
+mtest> mtn 108 -a 1044
+
+Illegal option!! (-r)
+mtest> mtn -r 1000
+
+Illegal option!! (-r)
+mtest> mtn -r 1000 -a
+
+mtest> mtn 623 -a 256
+
+mtest> mtn 623 -a 1024
+
+mtest> mtn 24 -a 1428
+
+mtest> mtn 30 -a 3 
+
+mtest> mtn 30 -a 3
+
+mtest> mtn 123
+
+Illegal option!! (55)
+mtest> mtd 55 -r
+
+mtest> mtn 20000
+
+mtest> mtd -i 0
+
+mtest> mtd -i 20000
+
+mtest> mtd -i 0
+
+mtest> mtd -a -r 1234
+
+mtest> mtd -r 12345
+
+mtest> mtn 1234
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 100000 Bytes
+* Number of blocks      : 1237
+* Free mem in last block: 62464
+* Recycle list          : 
+[  0] = 8021      [256] = 208       [1024] = 209       [  3] = 22        
+[ 10] = 130       [2058] = 159       [266] = 33        [522] = 54        
+[778] = 76        [1034] = 97        [ 11] = 59        [2059] = 80        
+[532] = 28        [1300] = 67        [788] = 31        [1044] = 27        
+[ 25] = 1         [548] = 1         [292] = 63        [1330] = 1         
+[ 56] = 1         [568] = 1         [312] = 1         [1100] = 2         
+[844] = 38        [1875] = 1         [111] = 1         [1661] = 1         
+[143] = 19        [399] = 1         [404] = 84        [660] = 98        
+[1172] = 1         [1428] = 16        [916] = 69        [183] = 13        
+[184] = 53        [952] = 1         [696] = 42        [440] = 106       
+[450] = 1         [203] = 1         [204] = 48        [716] = 37        
+[460] = 1         [972] = 130       [213] = 79        [214] = 159       
+[223] = 77        [479] = 1         [224] = 311       [251] = 33        
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+xxxoxoooooxxxooooxoxxoooxxxoxxoxoxoooxxxooooxxxoxo
+oxxoxxxoxoxxxxooooxxooooxoxxoxxoooxoxoxxxooooooxxo
+xxxoxoxxooxooxooooooxooxooxoxooxxxooxxxxoxooxoxxoo
+xooxooooxxxxxxoooxooxoooooxoooooxxoooooxoxxxoxoxox
+ooxxxoooooxooxooxxoxooxxooxxooxxxooxxoooooxxooxxxo
+xxoxxoooxoxoxoxoooxxoxxoooooxxxxoxxoooxooxooxoxoxx
+oxxxooxxooooxoooxooxxxoxoxoxooooxxxooxooxooooooxox
+xxxxxoxoxoxooooooooxoxooooxoxoooooxxxoxooxooxxxoxx
+xoooooxxooxxooooxoooxoxoxoxoxoxxooxooooooxxxoxoxoo
+xxooxoxooxxooxoooooxoooxoooooooxooxxxoxoxoooxxoxoo
+ooooxxxoooooxoooooxxoxoxxxoooxxxoxxoooxoooooxoxxox
+xoxxxoooooxoooxxxxoxxooooxxxoxxoooxxxxoxoooxoxooxx
+oxoxxxooxoxxxoxxxxxxooooxoooxxoooooxoooxxxxxxxoooo
+xxxooxooxoxoooxooooxoxoxoooooooxoxxooxoxoxxxooxooo
+oooooxooooooxxxooxxoxoxxoooxooxoooxoxxxxooooxxooxo
+xxooooxoxxxxooxxoxoxoxxxxoooooooxxxooxxooxxooxooxo
+xooxoooooxxoooxxxooxxooxooooxoxoooxxoxxxoxxooooxxx
+oxooooxxooxxoxxoxooxoooooxxxooxoxoxxxxxoxoxxooxxox
+ooooooxxxoxxxooxxxoxxooxxooxxooxxxoooooxooooooxoox
+xooooxxoooxxxxxoxoxooxxoxxoxxxxxoooxoooxoxoxxoxooo
+ooxooxxooxoxoxxxoxxxooxxoxoxooxoxooooxxxxxxxoooxox
+oooxoxxooooxxoxxoxxoxoooxxxoxoooxxoxoxxxoxxoxoxxoo
+ooooxoxooooxooxxxxxxxoooxooooxoxooxoxxoxoxooxoxoxx
+xxoxoxooxxxoxoxoooxxxoxxoxoxxxooxooooxoxxooooxxxxo
+ooxxxxoooooooxoxxxxxxxxoxoxxoxooxoxooooxoxxoxooxxx
+ooxooxoxxooxoxoxoooxoxooxxooooxxoxoxoooooxxoxxoooo
+oxoooxooxoxxxoooxooxxxoxxoooxxooxxooxoxooxoooooxoo
+xxoxxoxxxxxxxooxxoxoxoooooxxooooxoooxoxoxxxoooooox
+xooxoxxoxxxxxxxoxxoxxoooxoooooooxooooxooxooxooxooo
+xoxxoxxxxoooxoxooxxxxoxxooooxxoooooxoxxoxoxoxooooo
+oxxoooxoxxoooxoxoxoxxooxxxoxoxoxxooxxxxxoooxooooxx
+oxxooxoooxxxxxoooxxooxxooxoxooooooxoxxxxxoxoooooxx
+ooooxooxooooxxooooooxoxooxoxoxxoxoxxxxxxxxooxooooo
+xxoxooxxxxooxoxoxoxxoooooxoooxxxxooxooxoxooxoxxxox
+oooxxxoooxoxoxoxoxxoxxoooxoxooxxoooxxxxxooooxoooox
+oxoxoooxooxooxxxxxoxxoooooxoooxxxoxooxoooxxoxoxxxo
+xoooxxooxxxoxxoxxxxooxxoxoooxxoxoxxoxxxooooxxoxoox
+xxxxoxxooxooxooxooooxoooxooxoxooxooxoxooooxxoxxxox
+ooxxoxxxxxxxxxxxoxxoxxxoxxoxooxooooxoooooooxxxxxox
+oxxxoooooxoooooooxoxxoxoooxxxoooxooxxxoxxoooxxxoxo
+xxxxxxxooxxooxoxxxxoxoooxxoxooxoooxoxoxoxxxxxxxoox
+xxoooooxxoxoxoooxxxooooxxooxoxxoxooxxxoxoxxxoooxxx
+xxooxooxxxxxooxoooxxxoxxxooxxoxxoxooooxoxoxxoooxxo
+ooxoooxxoxxxooxooxooxoooxoxoxooooxooxooxooxoooxoxx
+xooxooxoxooxoxxxoxoxoxxxooxooooxoxooxxoxxxxoxoxxox
+oxxxxxoxxxxoxxoxooxoooxxoxoxxxoxxxxxooooxoxoxxoooo
+xooxoxxxoxooooxooooxooxxoxoxoxooxoooxxxxxooxooxxxx
+xoooxxxooxooxoooxxxxoxxoxxxxxoooxxoxxoxooxxxxxxoxo
+oxxoxxxxxoxooxoxooxooxxoxxooxxxoxoxooxoxoxoxooooox
+oxoooxxxoooxoxoxoxxxoxxoooxoxoooooooooooxooxoxxxxx
+oxoooxooxooxxoxoxooooxxoxoxxxoxxoooxxooxoooxooxoox
+ooxoxoxoxxoxooxoooxxxoxoxoooxoooxxxooxoooooxoxxxxo
+oxxxxxooxxxooxooxxooooxooooxxooxxooxoxoxoxooxxxxox
+oxxxoooxxoxoxoxoxxoxoooxooxxxoxxxxooooxxoxxoxxooxo
+ooxxooxxxxoooxooooooxxxoxxxxxoxxoxoxooxooxooxxoxoo
+ooooooxooxxoooxxxooxxxoxxxooxxxooxoxxoxoxxoooxxoxx
+xxoxxooxoxxxoxooxoxoxooxxxxxxooxxooxxxxooxxoxxoxoo
+oxxxxxxoxoxxxoooxxxoxoooooooxxxoxxoxooxxoxoxoxoooo
+xxoooxxxxxxooxoxoxoxxxxooxoxoxooxxxooxoxooooxoooox
+xoxoooooooxooooxoooxoooxxxooxxoxxoxooxoooxxoxoxxxo
+xoxoooooooxxoooxxooxxoxoxoxooxoxxoxoxoxooxooooxxoo
+ooxooxxxxoxxoxxxooxoooooooxooxxxxxxooooxxoxoxoxxox
+ooxxoooxooxooooxxxxooxooxooxxxoxxoxxxxooxoxoxoxxox
+oxxoxoxoooxooxoxxooxxooooxxooooooxxoxxoxxooxxoooxx
+xxooxxooxoxxxoooxxooooxoxxxxxxoooxxoxoxoxxoxxooooo
+xxoxxoooooooxoooxxxoooooxxooxoxxxooxoxoooxoxxoxxoo
+ooooxooxoooxooxoooxxoxoxooxxxoooxooxxoxxxxxooxoxxo
+xoxxooooooxoxooxxoxoxxoxxoooooxooooooxxooooooooxxx
+oxoxoxxxxoxxxoxxxxooxoxoooxoxxxooxxooooooxxxooxoox
+xxxxoooooxoxxxxxxoooxoxxxxxxoxxoxxxxoxooxoxxooooxo
+xoxoxxoxoxoxoxxoxoxxooooxoxoxxxxxoxxoxoooooxxxooxx
+ooxooxxxoooxoooxxxxoooooxxoxooxooxxxxxooxoxooxooxx
+ooxxoxoxoxxooooxoooxooooxoxxooxooxooooooxxoxooxoox
+xooooxxxoxooooooxoxoxoooooooxoxooooxooxxooxxoooxoo
+xoxxxoooooxoxooxoxoxoxoxxoxooxxxoxxoooxxooxxoxoooo
+ooxoxoxoxoxoxoxoxxoxoooxoxxoxoxoooooxxooooxooxoxoo
+xxoooooooooxxoxoooxoxooxxooxxxoxooxxooooxxoxoooxoo
+oxoooxooxooxxoxoxoxoooooxooxxooxoxooooxxooooxoooxo
+xxoooxoxxxoxxxxxooxxooooxxxxxxoxxxxooooxoxoxxxxxoo
+ooxxoooxxooxooxxxooooxooxoxxooxooooooooxxxooxxooxx
+xooxooxoxxxoooooxxoooooxoxoxxxoxxoxooxxoxooxooooox
+xxooxoxxxxoooxxxxoxxooxxoxooooxoxoxoxooxoxoxoxxoox
+xoxxooooxooxxxxxxoxxoxoxoooooooooxxooooxoxooxooooo
+xooooxoxxxoooxoxooxooxooooxxoxoxoooxxxxxxoxooxooxx
+xooxxoxoooxooxoxxxoxxoxoxxooxxoxooxxoooxxoxooxxoxo
+xoooooooooooxxxxoxxxxxooxoooooxxxooxooooxooooxxoxo
+xxxooxoxoxooooxxooxxooooooxoooxxooooxoooxxoxoxxxxx
+xxxxoxxoxxxoxxoooxoxoxoxxoxxoxooxxooooxoooooxoxxoo
+oxxoooooooxoxxooxoooxxoxxxxoxoxxxooxooxxooxooxooxx
+xoooooxxxxxoooxooxxoxxxoxooxoxooxxxxooooxoooxoooox
+xooxxooooxxxxxoooxooooooxoooxoxoooxxxoxoxxxxooxoxx
+oxooxoooooxoooooxxoxoxxxooxoxoooxxoxxoxooxooxxoooo
+xxoxooooxxoxoxoxoxoxxxxxoxxxxoxxooxxxxxxoxoxoxxxoo
+oxxoxoxoxooxooxxxxxxoxxoxoxoxxooxxxooxoxooxooxxxoo
+xoxxoxoxxxoooxoooxoxoooxoxoxoooooooooxoxxoxxoooxxx
+xoxxoxxooxooooooxoxooooooxxxxooxooooxxxooxoxxoxxox
+oxxxoxxxooooooxoxxxoooxxoxxxoooxoxxooxoooxoxoooxxx
+ooooxoooxxoxxoooooxoxooooxxoxooxoxoxooxoooooxxoxoo
+xoxoooxoxooxxoxxxoooooxxxoxoxxoooooxoxoxxoooooxooo
+xxxoxoxxoxoxooxxxoxxooooooxooooxoooxxoxoxooxxxxoox
+xxxoooooooooooooooxoxxxooxxxxxoxxooxxxxoxxoxxoxxxo
+oooxoxoxoxxoxoxoxxoooxooooxxxxooxxoooooxxxxoxoxoox
+xoxxoxoxxxoooxxxooxxxxxxoxoooxxxoxxxoxoxooooooxoxo
+ooxxxoxoooooxoooooxooooooxooxxooooxoxoooxoooooooxx
+oxxxoooxoxoxooxxxooxoxooxooxxoxoxxoooxoooooxooooxo
+oxxooxxxooxoxxxooooooooxooxxxooxooxxooxxoooxoxoxox
+oxooxxxooooxooooxoxxooxxoxxoooooxoooxxxoooxoxooxox
+xxooooxooooxxoxxxooooxoxoxxoxxxoxooxoxxoxoooooxoxx
+xooooxooxoxoxoooxxxooooxxxxxxxxoooooxoxooxxoxoxxxo
+oxooxoxxxxoxxoxoxxoxxxxoxxxxxoxoxxoxooxoooxooxooox
+xooxoxxoooxooooxoxoooooxoxxxooxoooooxooxoxxooxoxxo
+ooxxxxoooxxoooooooxooxooxooooxoooooooxoxoxooooxxoo
+xoxoxxoooooooxxxoxoooxxoooxoxxoooxxxxooxxxxoooxooo
+xxxxoxooxxxxoxxxoxxooxoxoxoxooxxoxooxooooooxooxoxo
+ooxxxxxoooooooooxooxooxoooxoooooooooxoxooxoxxxxoxx
+oxxoooxxoxxxxoxoxoxxoooxxxxxoooxxooooxxoxoxxooxoxx
+oxooxoxoooxxoooooxoxooxoxoxooxoooxxooxxoxoxoxoxoox
+xxooooxoxxooxxxooxxxoxxooxxoxxoxooxxxoxxxxxxoxxoxo
+xooooooxoxoooxoxxxxxxoxoxoxooooxxxooooooxoooxoooxo
+oooxxxooxoooooooooxooxoxxooxxxxxoxxxooooooxoxoxoox
+oooxooooxoxxoxxxxoxoxooxxoxxxooxxxooxoxoxxoxoxxoxo
+ooxxxxxxooxxoxxxxxoxxxoooxxxxxoxxoxoxooxxooxxxooxo
+oxxoooxxxxxoxxxxooooooooxoxoxoooxoxoooxxxxxxxxoxoo
+xooxxxoxxxooxooxoxooxoooxxooxxoxxooxxxoxxxxxxoxoxx
+xoxoxxxooxxooxxoxxoxoxxoxoxoooxxooxooxooxxxxooxxoo
+xxooxoxxxoxxoxoooooooooooxxooxxxxoxoooxooxxooxoxxo
+xxoxxoxoooxoxooxxxoxxoxxooxxooooooxoxoooxoxxoxxxoo
+xooooooooooooooxxooooooooxxooxxoxxxxoooooxxoxoxxox
+xxxooxxooxoxoxxoxxxoxooxooxoooxoooooxxoxxxxxoxooxo
+ooooxxooxoooxxxoxxoooooooooxxxooxxxooxooooxooxoxox
+oxooxooxoxooxoxxoxxoxoooxoxxxxooooxooxoooooxoxoxxx
+oooooxoooxxxoxoxxxxooxoooxoxoxoxxoxxooxooxooxooxxo
+oxxxoxooxooxooxxoxxoooxooxxoxxoxxxxxooooxooxooxoxo
+xoooxxoxxxoxooooooxoxooxoxxoxxxxoooxoxoxoxooxxoxox
+ooxoxxoxoxxxooxoxxoooxoxxxxxxxxxxxxxoxoxoxxoxxoxoo
+oxxxxoxoxooxoxxooxoxxxoxoxxoooxxoooxxoxooooxxooxox
+xoooooxoxxoxxoooxxooxooooooooxoooxxoxxooxxxoooxxxo
+xoxoxoooxxxoooxoxxoooooooxoxoooxoxxoxxxxooooxxxoxo
+xxxxxoxxoooooxxxxoooxxxxxxooxoooxxoxoxooxxooooxoox
+xoxoxxxoxxxooooxooxxoooxxxoooxxooxxoxxooooxxxxoxox
+xoxxoooxxxxooxoxxxxxoxxoxoxoxxxxoxxooxoxoxxxxxxoxo
+xooxxooxooooooooxxxxxooxxoxxoxooxoooooxoxxooxoxooo
+oxoxoxxooxxxoooooxxooxoxxxoooxooxoxoooxooxxxxoxoox
+xoxoxxxoxoxxxoxxooxooxoooxoxoxooxoooxxxoxooxxoxoxo
+xoxoxooooxoxooooooxxooooooxoxxooooooxoxxxxxooxoxox
+oxxooxxxxxoxxxxoxooxxoxoooxoooxoxoxxxxxxxooxxoxoox
+xoxoooooxxxooxxxooxoxoooooxoxxoxoxxxxooooooooxxxxo
+ooxxxxooooxoooxxooxoxxxxoxxoxxxxooxxxxxoxoooooxoxo
+xxoxxxxooxoxxxxoooooooxxxxooxoooxooxoooooooxoxooox
+oxooooxoxxxoxxoxxoxooxoxooooooooooooxxoxxoooxxxxoo
+xoooxoooxoxxxxooooxoxoxooooxxxoooooxxxooxxoxoxoxxo
+ooxxooxoxoxoxxxoxoxoxxxooxoxooxxoooxooxxxoxoxxoxox
+oooxoxooxxxoooxooooxooxxxxxoxxooxooooxoxooxooxxoox
+ooxxooxoxxoxxxxxxxooxxooooooxxxoooxxxoxoxoxooxxoxo
+oooxxxxxxxooxooxoxoxxoxoxxxoxoooxoxxxxxxoooxooxxoo
+xoooooxxooxooxooooxxoooxxooxxoooxoxoooxoooxxxooxox
+xoxooooxxxoxoooooxoxooxooxoxoooxxoxooxooxxoxoxooox
+xooxoxxxoooxooooxxooooxxoxooxooxoooxxoxxoxxooxxoxx
+xoooxooxoxxoooxooxooooxooooxxxoxooxxxxxxoxoxxxoxxx
+oooxxoxooxoooxxxxoxoxoxoooooxooxoxoxxxxooxoooxxooo
+oxxooxoxooxxxooooooxoxoxxxoooxoooxoxooxoxooooxoxoo
+xoxoxoxoxoooooooxoooxxxoxxoxoxxoooxxxxooxxoxxxoooo
+xxxoooooxoxxxxoxxoxxoxoxooxxxoxxxooooxxoooooooxoxo
+ooooxoooxxxooxxxxooxoxxoooooxoxooooxxxxoxxxoxxoooo
+xxxooxxxxoooxooooxooooooxoxooxoxooxxxxooxxoxooxxxo
+xoooxxxooxoxooxoxooxxoxxoxxxxxxxxoxxxooxooooooxoxx
+xxooxooxxoxoxooxoxxxoxoxxxoxxxxxoooxoooxxxoooxooxo
+oooxxxxooooooooooxooxoxooxxoxoxooxooooxoxooxxooxox
+ooooxoooxoxxxoxxoxoxxxoxxooxxoooooxxxxxoooxoxoxoox
+oooxxoxooxoxooxoxoooxoooxxoxooooooxoxoxoooxoooooox
+oxxoooooooooooxxxoxxoooooooxxooxxxooxxxoxoooxoxxxx
+xooxooooxxxxxooxxxxxxxooooxoxoxoooxxxooxoxxooooxxx
+xxoooxxoooxxoxoxxooooooooxoooooooooxxoxoxoxoxxxoxx
+oxxoooooxooxoooxoooxxoooxooxxoooxxxxxxxxoxooxxxxox
+xxoxxxoxoooooxoooxxxoooxxooooxoooxxxooxxoxoxxoooox
+ooooooxxxooxooxxoooxooooxoooooxoooxoxxxoxxxxxxxxoo
+xoxoxxxoxxoxxoooooxxxoxooxxooxoxxooxxoooxoxxooxxox
+xooxoxoxooxxoxooxoxxoxxoxxooooooxxxoxxxoxoooxooooo
+xoooxxooxooooxoooooxxxxooooooxoxoxxoxoxoooxxooooxo
+oooxoooxxxoooooxxoxoooxxoxoxxxooxoxxoxxxxoooxoxoox
+oxoooooxoooxxxoxoxoxxxoxooxxooooxoxoxxooooxxoooxxo
+xooxxoxooooooooxooxxoxxoooxxxxooxxxxxoooooxooxooxx
+ooxxxooxoooooxxxxxxxxooxoxxooxxooooxxxoooxxoxxxxxx
+xxoooxxxxxooxoxoxoxoooxxoxoooxoxxoxooxoxxxoxooxoox
+ooxxxoxooooooxoxoooxooooxoxoxxxxoxxxoxxxoooooxxooo
+ooxxoxooxxoooxoooxxxxoooooooxoooxxxoxxxxooxxxxxoox
+xxxoooxooxooxooxxoooxooxoooxooxooxoxoxxxoxxxooxoox
+xoooxxoxxxxxxxooooxooxxooooxxxxxooxxxooxooxxxxxxoo
+ooxxoxxoxxoxoooxoxxoooxoxooooxoxoxxoxoxxooooooxxoo
+xoxooxxxoooxoxoxooxooxxxoooxxoxxoxoooxxooxoxxoxxoo
+xxxoxxooxxooooxxxoxxoooxxxxoxoxoxoxoxoxoxoxooooxxo
+xoxxooxoxooooooxoxoxoxxxoxxxxxxxooooxxoxoxxooooooo
+xxoxxooooxxooxooxxoxoooxooxxoxooooxooxoxooxoxxxxoo
+xooxxxxoxoxoooxoxoooxoxooooxooxoooxxoxoxxxxxxooxxo
+xxoooxoxoxooooooxoxoooxoooxxxxxoxxooxoooooxoxooxxx
+ooxoooxxoxoooxoxooooxooxxoxooxooooxoxoxoxxxxxxoxoo
+xoxxooxxxxxxoxxxoxoxxooooxooxooxxooxoxoxoooooooxoo
+xxoxxxoxxxxooxxxoxoooxoxoxooxxxxxxoxxxxooxxoxoxxox
+oxxxxooxxxxoxooxoxxoxxxooooooxoxxoooxxooxxxxxxxoxo
+ooxxxxxoxxoxxxoooxooooooooooooxxxooxooxoooxxoooxxx
+oxxxoxooooxoooxxooxoooxxxoxoxooooxoooooxooxoxxooox
+xoxooxoooxxoxoooxooxxoxxooxxxoxoxoxxooooooooxxxoxx
+xxxxoooxxoxxxxoooooxxoxoxxoxoxxooxxxooooooxxxoxxoo
+xoxxxxxxxoxxoxoxoxxxxxoxoxxoxooooooxxxxooxoooxoxxx
+oxxxxxxxoooxxoxoxoxxoxxoooxoxxoooxxooxxxoooxooxoox
+oxooooxoxooooxoxoooxoooxoxooxxooxoxxooxooooxooxooo
+oxooxxoxooxoxooxooxoxoooxxxxxoooooxooxoooxxoxoxxoo
+xoooooxxxoooxoxoxxooooooooxoxoooooxxxoooxxoxoooxxx
+oooxooxxoooxoxxxxxxxooooxooxxxxooooxxoxoooxxooxoxo
+xxxxoooooxxxxxxxoxxxooxxxxoooooxxxxoxxooxxxoxxoxox
+oxxoxoxxxxxxxxxxoooxxoxxxxxoxxxxoooxoxoxxooxxoxoxx
+xooxoxoxxoxooooxooxoxooxoxxoooxxooxxooooxooxxxxxoo
+ooooooxxxxxxoooooxoooxxxooooxxxxxoxxoxxooxxxoooxoo
+xoooxoxxoxxxxxooooooxoxoxxxooooxoxoxxxxooxoooxoxxx
+xoooxoxoxxxooxxxoxoxoxoxoxxxxoooxoxxxoxxxxxxooxxoo
+oxxooxooooxoxooxoooxoxoxooxxxxooxxxooxoooxoxxoxxox
+ooooxxoooxxooxooooxxxxxoooxoxoxoxxxooxxxoooxoooooo
+ooooxoooooxxoxxxooxoxoxxooxooxxoxooxoooooooxoooxoo
+oxoxxoxxxoxoxoxoxxoooxooxoxxxxxxxoxxooxoxxooxxxxoo
+xoxxxxxoxxxoxooxxxoxxoooooxoxxooxxoxxoooxoxoxxooox
+oxxoxxoxxooxxxxooxoooooxxooxoooxxoooxoxxoxoxoooxoo
+oxoooxoxoxxoooxxxoxxxooooxooooooxxxoooxxoxxxooxoox
+xxooxxxooxxoxxoxooooxooxxxooxoooxooxxooooooxooooxx
+oooxooxoooooxxxoooooooxxooooxxooxoooooooooxxooxooo
+ooxoxxooxxoxxoooxoxoooxxxoxooxoxxxxxooxoxxxxxoooxx
+oxoxxxoxxxoxooxoxoxxoooooooxooxoxxxxxxoxoxxoxxoxoo
+xxoxoxoxoooxoooxxoxxoxxoxxxoxxxoxxoooooooooxoxxxxo
+oxxxxxxooxxoooxxxxxxoxoxxoxoxxoxooxoxoxxooxoxooooo
+xxoxxxxxxxxoxooxoxxoxooxooxxoxxoooxxoxooxxxxxxxxxo
+xxxooxxxoxooooxoxoxxxooxoooxxxooxoxooxxoxoooxxxoox
+oooxxxxxoxoooxoooxooxxxoxxxoxxxxxoxxxxxoxxooxxxoxx
+ooxoxoxooxoxxoxxoxxooooxxoooxoxoxoxxooooxxoxxoxxox
+xoooxxxoooooxoxooxxoxxoxoxoxoooxooxxooooooooxxxooo
+xxoxoooxxoxxooxoxxooxoxoxoxxoxooooxoxoxxxxxxxoooxx
+oxxxxoxxoxoxoooooxoxooxooooxoxxxxxooxoxoooooxooxxo
+xoxxxoxooxxoxxxoooooooxxxxoxoooooxooxxxoooxoxoxoox
+oxoooxxxoxooxxooxxoooooxxxooxooooxxxoxxooooooxxxxo
+oxxooxooooxxoooooxooxxxxooxoooxxxooooxxxoooxoxxoxo
+ooooxooxxxoooxxxxoooxoxxoxooxoxoxooxxxxoxxxoxxxxox
+xxooxxooxoooxooxxxoxooxxxoooxoxooxooxooxoooxxooooo
+oooooxooxooxxxooooxooxoxxooxoxoooxxxoxooxxoxxxooxo
+oxxooxoxooxxxoxooooooxoxooxoooxxooxoooooxoooxxxoxx
+oxxooxoxxooooooxoxooooxooxoxooooxxxxoxxxoooxooxoox
+oxoooxxxxoxoooxxooxxooxxxxxoxooxoooxxxxxxooxxoxoxo
+xxxxxxxooooooxoooxooxxoxoxoooooxxoxxooxoxxxxoxxoox
+xoooxooxxxxooxoxxooxoooooxxxoooxoxxooooxxxxxxooxox
+ooxoxxxoooooxxooxoooooxooooxooxoxxxoxxoxxooxxooxxx
+oxoxxxxoxoxxoxooxxoxoxoooxxoooxooooxxxoxoxxoxxoxox
+oxxoxoooxoooooxoxoxoxxxxoooxxoooxoxoooooxxoooxxoxo
+ooxxoxoxooxxxxoooooooooxooooxxoooxooooxoxooxoxoxoo
+oxxoooxoxooxoxxxooooxoxoxxxoooxooooxoooxxoxxoxxoxo
+xoxxxoxxxoxxoxoxxxxoxxxooooooooxxxooxxxxxoooxoxoxo
+xxxxxxoooxxxoxxxxooooooxoxxooooxoooxxxoxoxoxooxxxx
+xxooxoxoxxxooxxoxoooxoxoxooxxoxxxxxoxxoxoxxoxoooxo
+xxoxxoxxoooxxooooxoooooxxxxooxxxoooooxooooxooxxxoo
+oooxxoooxxxxoxxxxxxxxoxooxxxoxxoxxxxoxxoooxooxxxoo
+oxoooxooxoxoxxoxoxxxxxxooxoxxooooxxoxxoxoooxoooxoo
+xxoxoxooooxoxxxoxxooxoooxoxoxxxoooxoxxoxooooxoxxox
+xoooxxoxoxxxoxoooxoooooooxoxoxxxooooooxooxooooxooo
+ooooooxxoooxxoxoxoxoxooxooxoxoxoxxxxxoooxooxooxoox
+xxoxxooxoooxoxxoooooooxoxooxooxoxxxooxxoooxxxxxxxo
+oxxooxooxoxxooxooxooxoxoxooxxoxxxoooxooxxxoooxxxoo
+xxxooooxoxoxxxxxoooooxoxoxooooxooooooxoooxooxooxxo
+xooxoooxoooxxxoooxoooxoooxxooxoooooxxxoooxxxooooxo
+oooooxooxoxoxxoxxxoooxooxoooxoxxooooxooooxxoxxoxxx
+ooxxxoxooxoxoxoxoooxxxooooooxoxxoxoooooooxooxooooo
+xoooxooxxxooxooxooooooxxoooxxooxxoooxxoxoxoxoxoxox
+xxoxooxxxoxoxoooxoxoxxooooxoxooooooxxxxxoxxoooxxoo
+oxxxxooooxooxoooooxxoooxoooxxoooxoxxxxooxxxxoxxxxo
+xoooxxxoooooxoooooooxxxoooooxxooxoxooxxxxooxoooxxx
+xxooooxooxooxxxoooxxooxooxxxxxxxxxxxooooooxooxooxo
+xxooooxooxooxxooooooooxoxxooxxxooxxoooxooxooxooooo
+xooxoxxoooooxoxoxoooooxxxxoxoxooxoxooxooxxoxoxoxxx
+xoxxoxxxoooooooxxooxooxoxxooooxxoooooxxoooxoxoxooo
+xoooxooxoxooooooxxoooxxxoxxxooooooxxxxxxxooxxxooox
+xooxxxooooxoxxxxoxxooxoooooooxoxoxxooxxxoxoooooxxo
+xoxooxooxxxoooxoxxoxooxxxxoxxxoxxxxoxoooxxxxoooxoo
+xxoxoooxooxxooxxxoooxoxoxoxoxxoxxooxoxooooxxooxoxo
+xxxxxxoooxxoxooxooxxoxxxxxoooxxxoxxoxoooxxooxooxox
+xooooooxxoooooxoxoooxooooxxxoooooxxooooooxxoxxxoox
+ooooooxoxooxooxoxoxoooxxxooxxoooxooooxxooooxoxoxox
+ooxoxxxoxoxoxxoxxooxxoooxxxoxooxxoxxooxooooxooooxo
+ooxoxooxoxoxooxxoxxooxoooxooooooooooxooxxoxooooxox
+xoxooxoooxxooxoxxoxxoxooxooooxxoooxxxoxooooxoooxox
+xoooooxoxxxxooxxoxxxxxxxxxxxxooxxxoxooxoxxxoooxoxo
+xxooxxxooxxxoxoxxxooxooxxxoxxoxoooooooxxxooooxxxox
+oxxooooxoxxooxoxoxoxxxxoxoooxxooxxooxooxooxooxoxoo
+oxxxxxoooxxoxxoxooxoxxxxxxxxoxoooxooxxxoooxxxooooo
+oxoxxxxoxxxoxoooxooxooxxooxoxoxoxxxxxxxooooooxxxoo
+oxoxoxoooxxxooooxxoxoxxoooxoxoxoxoooooxxooxxooxxxx
+oxoooooxxxoxoxoxxxxxoxoooxoxooxooxxxoxxooxxxxxxoxx
+oxoxooooooxxoxxxooxooxxxoxxooxxoooooxooxxooooxoxoo
+oxoxooxoxooxooxxooxxxooxooxxoooxoxooooxooooxoxxxoo
+xxxxoooxoooxxxoxxooxooxxoxoxoxxxoxxxxoxxoooxooxoxx
+ooooxooxxxxxoxooxxxxxxoxooxxxxxxoxooxooxoxoxxooxoo
+oxoooxxxxxxxxoxooooxxxoooxxxoooxoxooxooxoxoxxxxoxx
+xxoxooxoxxxooxxoooxoxooxoxxoxoooxooxxoxooxxooxxxxo
+ooxxoooxxoxooxxxoxxxxooooxxxooxxxoooooooxxoxxooxox
+oooxxxxoxoooxxoxooxooooxxxoxxxoxxoxooxxxxooooooxox
+xooxoooxxxxoxoxxxxooxoxxxxooxxxoooooxooxooooooxxxo
+xxoooxooxxxooxxxoxxxoooxoxoxoxxoooxoxxooooxoooxooo
+oxoooxxxxoxxoxxooooooooxooxxooxooooxoxoooooxoooxxx
+ooooxoooxxxxoxoooxxoxooxxxoxoxxooxxxoxxooxoxoxoxox
+xoooxooxxooooxxoooxoxxooooooxoxxxxoxxxoxoxxxoxooxx
+ooxxxooooxoxooxxooxxoooooxooooooxxxxoxxxooooxxoxoo
+oxoooxooooooooooooxooxxoxooxooxoxoooooooxoxoxoxoox
+oxxooxxxoxxxxxooxooooxooxxxoooxxxoxxoooxooxxxooooo
+xoxxxooxooxxooxxoxxooooxxooxooooooooooxoooooxoxxxo
+xxoooxoxoooxxoxoxoxooxxxooxxooxoxoxxooxooxoxxoxxxo
+xxxxoxxooooooxooxooooxxoxxoxoxoxooxoxxoxooxxxoxoxo
+oxoxxooxoxooxoxxxoooxoxoooxxoxooooxxxxoooxxooxxooo
+xxxxxoooxooxoxooooooxxoxxxooooooxoxooooooooxxoxooo
+oxxxooxoooxoxooooxxxxxoooxoooxxooxoxxxxoxoooxoxxxo
+xxxxxxooxxxxxooxoooooooooxxxxxooxooxxoxooxxooooooo
+xooxoxxxxxoxoooxoxxxooxxooooxxxoxxoxoooxoooooxxoox
+xxoooooxooxoooxoxxxoxxxxoxxoxxxoooooxooooooooxxoxo
+oxooxxooxooxooooxxxxxxoxoxxxoooooxoxxoxoxxxoxxxooo
+xooxooxxxxxoxoxxoxoooxoxxoxoxooxxoooxxooooxxxoxooo
+xoxxxoxxooooxooxoooxoxxxooxxxxooxooxxxooxxxxooxooo
+xooooxxooooxoooooooooooxxxoxxxooooxooooxoooxxoooxo
+xoooooxxoooooooxoxxooxxoxxoxxxoxoxooxxoxooxxxxoooo
+ooxoxoooxoxxoooxxooxxxxoxxxxxooxooooxoxxoooooxxoox
+ooooxxxxxxxoxxoooxxxxooxxxooooxoooooooxoooooxoooox
+oxxxxoooooxxoxoxxxxxooxoxxxoxoooooxooxoxoxxxoxoxoo
+ooxxooxxoxoxxxxoooxxooxxxoooxxooooxoxoooxooxxxoxoo
+ooxxoxxoooooxooxxooxoooxxoooxxxoxoxxxoxxooxxxxxxoo
+oooxoooooxoooxoxxoxoooxxxxooooxxxooooooxoxxxxooooo
+xooxooooxooxooooxxoxxoxxoxoxoooxxooooooxxooxooxxoo
+xxoxxxoxxxoxoxxooxooxoxooooxooxxxxoooxoooxoxxxxoxx
+oxoxoxxxxxxxoxooxooooooooxoooooxxxxxxxxooxxxxooooo
+ooxooxxxxxoxooooxxoxoxoxoxoxxxooooooxooxoooxooxoox
+xxoxxxxxooxoooooxoxxooxxxoxxxoxoxxoxxoxxxoooooooox
+xooxxxxoooxoxoxxxoooooxxxooxoxxxoxooxxxxxxooxoxxox
+oxxoxxoxoooxoxxxxooxxxooxxooxoooxxxoooxoxxoxooxxoo
+oooooxoxxoxooooooxxxoooxooooxxoxxooxxxxoxxooooxooo
+oxxxoooxooxoxxxoooxxooxxxoxxooxoooooooooooxxxoxoox
+xoxxooooxoxooxxoxooxxxxooxxoxoooxoxxxoxooxoxxxxoxo
+ooxoxxoxoxoxoxxxxooooxoxooxoooooooxoxxoxxxooooxxoo
+xxooxoooxoooxoxooooxooxoxooxoxoxooxooooxxxoxoxoxoo
+oxxoxxoxxxxooxoxooxxxxoooooooxxooooooxoxxxoxooxooo
+xxoxxxxxoxxoxxoooooooxxxxxxoxxooxoxxxooxxxooooxooo
+xxxxxoxxxooxooooxxooxoxxxoxoxoxxooxooxooxxoxooooxo
+oxxooxxxxoooxxxoxxoxooxxxxooooxxxxoxooxoooxxxxxxxx
+oxooooxxxxoxxooxoxxxoxoxxxooxooxxooxoooxoxooxxxoxx
+xxoxooxxxxooxoxoooxxxxoxoxxooxxxoxoxoxxoooxxxoooxx
+oxoooxxxooxxoxoxoxoooooooooxxxxxoooxooxxxoxoxxxoox
+xoxoxoooxoooxoooxxxooxoxoooxoooxoxxxoooxoooxxxoxxo
+ooxooxxoooxxxoooxooxxoxoooxoxxoxoxooxxoooxxoxxooxx
+oxxxooxxooxoxxxxoxoxxoooxxxooooxooxooxxxxoxxxoooxx
+ooooxoooxoooxxxxxxoxxoxxxxxoxoooxoxooxoxooxooooxxo
+xxooxxoxooxooxoxooooooxoxoxxxxxxxooooxxoooxooxoxox
+oxxoooooxxoooooxooxoxxxoooxoxxooxxooxooxxxoxxoxoxx
+oxoxoooooxxoooxooxxxxxxoxoxoxxooxooxxoxxoxxxxoxxxx
+oxoxxoooxoooooxxoxoxoooooxxoooxooxoxxooxoxxoooxooo
+xoooxoxxoooxxoxoooooooxxooxxoxxxxoooxxxxxxooooxoxx
+xxoxooxxxoxxoxxxoooooooxxxxoxxoxxooxoooxoxxooxoxox
+ooxooooxooxooooxooxxxxxooxooxxxoxxoxoxooxxoooxxxxo
+oxooxooxoxxooxoxxoxoxxoooooxoxxooxxoxooooxoooxxoxo
+ooxxoooxoxooooxooxxoooooooxoxoooxxxxooxoxoxxxxxoox
+xoxxooooxxoooxxoxoooxxoooooxooooooxoooxoooxxooxxoo
+xoxxooxoxoooooxxooxxooxoooxoxoxxxooxooooxoxxoxxooo
+oxxoxoxooxoxoxoxoxoxooxoxxoooooooooooxxxooxoxoooox
+ooxooxoooxoxoxxxxxxooxoxooooooxxooxoxoxooooxxoxxoo
+xxoooooxoxxoxooxooxxooxxxooooxoxxxxxoooxxoxoxxoooo
+oooooxxoxoooxoxxxooxoxxxxoooooxoxxxxooooooxoooxoox
+xxoxoxxxoxxooxxoxoxxxoxoxxooxoooooxoxoxxoxooxoxoxo
+oxoxooxooooxxoooooxooxoxoooooxoxoxxoooooooooooxooo
+ooooxoxxxoxooxooooooxxooxxoxooooxoxooxoxxxxxxxxxox
+oxooooxoxooxxoxooxoooooxooooxoxxooxooxxxxooooxxxoo
+xooxxxxooxxooxooxooxooooxoxxoxooxxxxoooooooxxoxoxx
+ooxoooxooxxxoxxxooooxxooooxxooooooxxooooxxoooxoooo
+oooooxxxooxxxxxoxxoxoxoxxooxooxoooxoxoooxxoxoxoxxo
+xooooooooooxoxxxooxoxxooxoxooxoxxooxoxoooxooxoxoxx
+xooooxxoxooxooxooxxoxoxooxxxoxooooxxoooxoxxoxoxoxo
+xoxxoxoooxooxoooxxoooooooooxoooxxoxooxxxoxooxoooox
+ooxoxxxoxxxxooxooooxoxxoxxoxoxoxoxxoxoxooxxoooxoox
+ooooxoooxooxoxxooxxoxxxooooxoxxooxxoooxxxooxoxxoox
+oxoooxxxooooxoooxxxoxxxoxxxxooxoxoxoxooxoxoxooxxoo
+ooxooxxxooxooooxoooooxxoxoooooxxoooxxxxxooxoooxoxo
+oxxoxxoxxxxxxooxxooxxoxxxooxoooxxxooxxooxxxxooooox
+xoxoxoxoooooxooooxoooxxxxoxoxoooxxxooxoxoooxoxxxxx
+xxxxoxxoooxoooooooxoooxxxxxooooxxxoooxxxoxoooxoxoo
+oxxxoxoooxxxxxoooooooxxoxoxoooxoxxoxxoooxxooxxxxxo
+oxoxoooxxooxxxxxxoxxoooooxxoxxxoxoxoxxxoxooxxxoooo
+xxxxooxooooxxxoooxxoxxxoooxooxoooxooxxxxxoxxoooxox
+oxoxxooooooooxxxxoooxooxooxxxxooxooooxxxxoxooxooxx
+oooooooxxoxoxxoxoooooxooxoxxoxxoxoxxooooooxooxooxo
+xxoooooxoxxxooxoooxoxooxxoxooooooxxooxoxxooxxoxxxx
+xooooxxooooxoooxooxoxoooxxooxoooxxoxoxoxooooxxoooo
+oxooooooxooooxoxoooooooooxxxoooxoxoxxxooxoxooooxxx
+xooooxoxooxxxxooooxxooooxoxxooxoooxxxooooxxoooooxo
+xoxoxxxxoxxoxxxxxxxxoxoooxxooxxooxxoooooxoooxooxoo
+ooxoooooxxooooxoxoxoxoxxxxxxoooooxxxxxoooooooxxoox
+xooxoxooxxoooxxxoxoxooxooxxxooooxooxxxxoxoxooooxox
+xoxxooxooxooxxoxoxoxoooxxoxxooooxooxoxoxoxxxoxoooo
+oxoxooooooxxxoooxoxxooxoooxooooxoxoooxoxoooooxxxoo
+ooxooxoooxxoooxoooooxxxxoxoxxoxxooxooxooxxxxoxoooo
+xooxoooxoxxxooxxxoooooxoooxxxoxoxxxxooxoxooxxoxxxo
+xxxxxoxxooxxoooxoxoooxxxooxxooxooxooxxxoooxooooxoo
+oxxxooxooooxoxoxxoxxxxxoxxxxoxxxooxxxxoxooxoxxxoox
+xoxoxoxooxxxxoxxxoxxxoxxoooxooooxxxooxoxoxooxooxox
+oxxooxoxxxooooooxxxoxoxxxxoooxooxxxxxxxooxxoooxxox
+xoxoxoxoooxxooooxoooooxooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+ooooooo
+Array list ---
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxoxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxoxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxoxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxooxxoxxx
+xooxxoooxxoooxxxoxoooxxoxooxooxxxxoxoooxxxooxxxxxx
+xxoooooxxxoxxoxoooooxooxxxxooooooxoxoxoxoooxooxoxo
+oxxoxooxxooooxxxooxooxxoxxooxxxoxoooooxxooxoooooxx
+xxxxooxxxxxxxoxoxxoooxxxxoxxxxoxoooxxxoooxooxooxxo
+oooooxoxooooxxooooooxxoxooxoxxooooxxxoxoooooxooxoo
+xxxoxxoxoxoxxxoxxxxxooxoxoooxxoxooooxoxxoxoxoxxoox
+xxxoxoxoxxxooxxxoxxoooxoxxxxoooxxxxooooxxxooxxxoox
+xooxooooooxooxxoxxxxooxxoxoxxoxooxxxxxxxxooxxoxxoo
+oooxooxoxxxoooooooxoxooxxxooxxoxxooxoxxooxxooxxooo
+xoxoxxxxxoxxxoxxxoxoxooooxoxxooxxxoxoxxxxoxxoxoxox
+xooxxooxooxoxoxoooxxxxooxoxooooxooooooxxxxxooxxoox
+oxxxxxxxxooooxxxooxxooxoooxoxoooxoxxooooxoooooxxxo
+xxoxooxoooxoooooxxxxooxooxoxooxoxooooxxoooxxooooox
+oooxoxooxoxoooxoxxxooxoxoxxxoxxoxoxooooxooxoooooox
+oooxooooooxxxxoxoooxoooxoooxoxooxxooooooxoxoooxxoo
+xxxxooxooooxxxooooooooxxxoxoooxxoooxoooxoxoxoxooox
+xoooxxoxoooxooooooooxooooooooooooooooooxoxxoxooooo
+oxoxooxoooooxooxooxoooooooooooxxooxoxoooooooooooxx
+oooooxxoxoooooooooxooooooooooxooxxooooxoxooooooxox
+oooxoooooooxoxxooxxxxxxooooooooxoxxxxoxoooooooooxo
+ooooxoxoxoooxooooxxoxxxooooxoxxooooooooooxxooxoxxx
+oooxooooooxoooxoooxxoxxoxoooooxoxoooxooxxooxoooxoo
+xooooooooxxooxooooooooxoxooooxooxxooooooooxxoooooo
+oxxoooooxxoxoxoxxooxoxxooxoxooooooooooxoooxxooooxo
+oooxoooooooooooooooxooxoooxoxxxooxxooxoxxxxxxxxoxx
+ooxxoooooxoooxxoxxoooxooooxooxoooxoxxoooooooxoxxoo
+xoxoxxxoooooooxoxxooooxxooxooxooxooxxooooooooxxoxx
+ooxxoxoooxoxooxooxoxooooooxooxooooooxoxoooooxooxxo
+oooxxoxoxooooxoooxxxooxxoooxxooooxxooooooxooxoooxx
+ooooxxoxoooooxoooxoooooxoooxooxxxoxoxooxoxxxooxxoo
+oooooxoxxoooxxxxxxoooooooooxxxoxooxxoxoooxxxooooox
+ooooooxooxxoxoxxooooooxxooooooxxoooooooxoxoooooxoo
+oxoooxxooxoxxxxoxoooxoxoxxoooxoooxooxoxxoxoxxoooox
+ooooooxoooooxxooooxxxoxxooxoxxoxxxooxoxoooxoooooox
+oooxxoxxooooxxoxoooooooooooooxxoooxxxooooooxoooooo
+oooxooooooooxxooooooxooooxoooooxxxoooooxoxxxxoxxoo
+oooxooxxoooxooxxoooooxoxxoooooxooooxxxoooooooooxox
+xxoxxxooxooxoxoxooxoxooxxooxoxooooooooxoxxoooxxooo
+oooxoxooxoooooxoooooooxoooooxxoxoooxxoooooxoxxoxox
+oooooooxoxooooxoxoooxooxoooxxoxooxxxoxoxoooxxoxxox
+xxoxoxxxoooooooooooooooxooooooooooooxxxxooxxoooxoo
+ooxxoxoooxxooooxoxxooooooooxooooooooxoooxoxxoxoooo
+xooxxxoooxooooooooooxooxoxooxooxoxooxoooooooooxxox
+xoooxooooooooxoxooxooooxxooooooxxooxxxoooooooxxxoo
+oxxxoooooxxoxxoxxooxxxxoxoxxxooooooxooooooxoxxoxxx
+oooooxoooxoxoxoxoooooxxoooooxoooxoxoxooxxooxxoxoxo
+xooxooxoxxo
+
+mtest> q -f
+
+
+
+###########
+#   do5   #
+###########
+mtest> mtnew 10
+
+mtest> mtnew 5 -a 512
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 43000
+* Recycle list          : 
+[454] = 1         [464] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooooooooo
+Array list ---
+ooooo
+
+mtest> mtnew 5 -a 1024
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 8
+* Free mem in last block: 20472
+* Recycle list          : 
+[454] = 1         [464] = 1         [977] = 1         [465] = 4         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooooooooo
+Array list ---
+oooooooooo
+
+mtest> mtnew 5 -a 256
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 9
+* Free mem in last block: 20448
+* Recycle list          : 
+[454] = 1         [208] = 1         [464] = 1         [977] = 1         
+[465] = 4         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooooooooo
+Array list ---
+ooooooooooooooo
+
+mtest> mtdel -i 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 9
+* Free mem in last block: 20448
+* Recycle list          : 
+[  0] = 1         [454] = 1         [208] = 1         [464] = 1         
+[977] = 1         [465] = 4         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooooooooooooo
+
+mtest> mtdel -i 4 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 9
+* Free mem in last block: 20448
+* Recycle list          : 
+[  0] = 1         [512] = 1         [454] = 1         [208] = 1         
+[464] = 1         [977] = 1         [465] = 4         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooxoooooooooo
+
+mtest> mtdel -i 8 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 9
+* Free mem in last block: 20448
+* Recycle list          : 
+[  0] = 1         [512] = 1         [1024] = 1         [454] = 1         
+[208] = 1         [464] = 1         [977] = 1         [465] = 4         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooxoooxoooooo
+
+mtest> mtdel -i 13 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 9
+* Free mem in last block: 20448
+* Recycle list          : 
+[  0] = 1         [512] = 1         [1024] = 1         [256] = 1         
+[454] = 1         [208] = 1         [464] = 1         [977] = 1         
+[465] = 4         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooxoooxooooxo
+
+mtest> mtr 120
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 120
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> q -f
+
+

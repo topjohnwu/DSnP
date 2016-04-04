@@ -1,0 +1,852 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"_ai",
+				"_aigList"
+			],
+			[
+				"is",
+				"isAig	(cirGate.h)"
+			],
+			[
+				"fr",
+				"fraig"
+			],
+			[
+				"rese",
+				"resetfraig	(cirGate.h)"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"_g",
+				"_gfraigstat"
+			],
+			[
+				"_fra",
+				"_fraigstat"
+			],
+			[
+				"report",
+				"reportGate	(cirGate.h)"
+			],
+			[
+				"new",
+				"newList"
+			],
+			[
+				"get",
+				"getValue"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"patte",
+				"patternFile"
+			],
+			[
+				"patt",
+				"patternFile"
+			],
+			[
+				"FOR",
+				"FORPO"
+			],
+			[
+				"_sim",
+				"_simLog	(cirMgr.h)"
+			],
+			[
+				"pa",
+				"patterns"
+			],
+			[
+				"fra",
+				"fraiged"
+			],
+			[
+				"repo",
+				"reportGate"
+			],
+			[
+				"be",
+				"begin	(cirMgr.cpp)"
+			],
+			[
+				"push",
+				"push_back"
+			],
+			[
+				"cons",
+				"constSAT"
+			],
+			[
+				"rep",
+				"reportGate"
+			],
+			[
+				"pus",
+				"push_back"
+			],
+			[
+				"frai",
+				"fraiged	(cirGate.h)"
+			],
+			[
+				"res",
+				"resim"
+			],
+			[
+				"prin",
+				"printFECPairs	(cirMgr.h)"
+			],
+			[
+				"DS",
+				"DFSGATE"
+			],
+			[
+				"Mer",
+				"mergelist"
+			],
+			[
+				"vec",
+				"vector"
+			],
+			[
+				"pro",
+				"proveCir	(cirMgr.h)"
+			],
+			[
+				"Cir",
+				"CirMgr	(cirDef.h)"
+			],
+			[
+				"pat",
+				"patternSet"
+			],
+			[
+				"Uns",
+				"UnsignedList"
+			],
+			[
+				"getVa",
+				"getValue	(cirGate.h)"
+			],
+			[
+				"upda",
+				"updateFec	(cirMgr.h)"
+			],
+			[
+				"updt",
+				"updateFec	(cirMgr.h)"
+			],
+			[
+				"set",
+				"setFec"
+			],
+			[
+				"_fec",
+				"_fecList"
+			],
+			[
+				"se",
+				"setValue"
+			],
+			[
+				"_iD",
+				"_idGlist"
+			],
+			[
+				"_in",
+				"_idGlist[_undefList	(cirMgr.cpp)"
+			],
+			[
+				"ass",
+				"assumeRelease"
+			],
+			[
+				"ma",
+				"mark"
+			],
+			[
+				"UN",
+				"UNSAT	(satTest.cpp)"
+			],
+			[
+				"DFS",
+				"DFSGATE"
+			],
+			[
+				"_df",
+				"_dfsList"
+			],
+			[
+				"_fe",
+				"_fecList"
+			],
+			[
+				"_ou",
+				"_outInv	(cirGate.h)"
+			],
+			[
+				"ini",
+				"initialize	(satTest.cpp)"
+			],
+			[
+				"_dfs",
+				"_dfsList	(cirMgr.h)"
+			],
+			[
+				"_id",
+				"_idGlist"
+			],
+			[
+				"_he",
+				"_header"
+			],
+			[
+				"print",
+				"printPIs	(cirMgr.h)"
+			],
+			[
+				"si",
+				"size"
+			],
+			[
+				"getTy",
+				"getTypeStr	(cirGate.h)"
+			],
+			[
+				"exi",
+				"exists	(cirCmd.cpp)"
+			],
+			[
+				"sim",
+				"simulate"
+			],
+			[
+				"siz",
+				"size"
+			],
+			[
+				"che",
+				"checkInv	(myHashMap.h)"
+			],
+			[
+				"fec",
+				"fecHash"
+			],
+			[
+				"Hash",
+				"HashMap	(cirFraig.cpp)"
+			],
+			[
+				"Has",
+				"HashMap	(cirFraig.cpp)"
+			],
+			[
+				"PI",
+				"PIGate	(cirGate.h)"
+			],
+			[
+				"patter",
+				"pattern"
+			],
+			[
+				"isD",
+				"inDfs	(cirGate.h)"
+			],
+			[
+				"find",
+				"findDfs	(cirMgr.h)"
+			],
+			[
+				"al",
+				"algorithm	(cirMgr.cpp)"
+			],
+			[
+				"pr",
+				"printGate"
+			],
+			[
+				"fin",
+				"findFloating	(cirMgr.h)"
+			],
+			[
+				"ch",
+				"check	(myHashMap.h)"
+			],
+			[
+				"has",
+				"hash"
+			],
+			[
+				"cu",
+				"cur"
+			],
+			[
+				"Ha",
+				"HashMap	(myHashMap.h)"
+			],
+			[
+				"cir",
+				"cirGate	(cirGate.h)"
+			],
+			[
+				"in",
+				"inc	#include \"…\""
+			],
+			[
+				"use",
+				"used"
+			],
+			[
+				"_un",
+				"_undefList"
+			],
+			[
+				"un",
+				"unsigned"
+			],
+			[
+				"uns",
+				"unsigned"
+			],
+			[
+				"unse",
+				"unused"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"unli",
+				"unlinkOut"
+			],
+			[
+				"unlink",
+				"unlinkIn	(cirMgr.h)"
+			],
+			[
+				"cur-",
+				"cur->_inInv"
+			],
+			[
+				"cur",
+				"cur->_inInv"
+			],
+			[
+				"CON",
+				"CONST_GATE	(cirGate.h)"
+			],
+			[
+				"AIG",
+				"AIG_GATE"
+			],
+			[
+				"getT",
+				"getType	(cirGate.h)"
+			],
+			[
+				"ge",
+				"getTypeStr	(cirMgr.cpp)"
+			],
+			[
+				"Gat",
+				"CirGate"
+			],
+			[
+				"mar",
+				"mark"
+			],
+			[
+				"dfs",
+				"dfslist	(cirGate.h)"
+			],
+			[
+				"CirGa",
+				"CIRGate	(cirCmd.cpp)"
+			],
+			[
+				"fi",
+				"findUnused	(cirMgr.h)"
+			],
+			[
+				"Un",
+				"UnsignedList"
+			],
+			[
+				"false",
+				"false"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"_",
+				"_buckets"
+			],
+			[
+				"num",
+				"numBuckets"
+			],
+			[
+				"bu",
+				"_buckets"
+			],
+			[
+				"del",
+				"delData"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"ILL",
+				"ILLEGAL_NUM"
+			],
+			[
+				"mys",
+				"myStr2Int"
+			],
+			[
+				"MI",
+				"MISSING_NUM"
+			],
+			[
+				"err",
+				"errMsg"
+			],
+			[
+				"crea",
+				"createAIG"
+			],
+			[
+				"cont",
+				"continue"
+			],
+			[
+				"AI",
+				"AIGGate"
+			],
+			[
+				"PO",
+				"POGate"
+			],
+			[
+				"str",
+				"string::npos"
+			],
+			[
+				"aig",
+				"aigDfsList"
+			],
+			[
+				"ai",
+				"aigDfsList"
+			],
+			[
+				"sh",
+				"showSymbol	(cirGate.h)"
+			],
+			[
+				"mystr",
+				"myStr2Int	(util.h)"
+			],
+			[
+				"my",
+				"myStrGetTok"
+			],
+			[
+				"Ci",
+				"CirGate::dfs"
+			],
+			[
+				"_i",
+				"_id"
+			],
+			[
+				"C",
+				"CirGate"
+			],
+			[
+				"con",
+				"constGate	(cirMgr.h)"
+			],
+			[
+				"end",
+				"endl"
+			],
+			[
+				"u",
+				"unused"
+			],
+			[
+				"flo",
+				"floating"
+			],
+			[
+				"e",
+				"endl"
+			],
+			[
+				"A",
+				"AIGGate	(cirGate.h)"
+			],
+			[
+				"Und",
+				"UndefGate	(cirGate.h)"
+			],
+			[
+				"vector",
+				"vector"
+			],
+			[
+				"cre",
+				"createAIG	(cirMgr.h)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "list",
+		"selected_items":
+		[
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"luser",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"linter",
+				"SublimeLinter: Choose Gutter Theme"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirCmd.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/util/myHashMap.h",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirFraig.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirSim.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirOpt.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirMgr.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirMgr.h",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirGate.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirGate.h",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirDef.h",
+		"/Users/topjohnwu/DSnP/fraig/src/util/util.h",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/sat.h",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/satTest.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/sat.h",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/README",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/Solver.h",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/Proof.h",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/File.h",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/VarOrder.h",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/Proof.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/Solver.cpp",
+		"/Users/topjohnwu/DSnP/fraig/src/sat/test/satTest",
+		"/Users/topjohnwu/DSnP/fraig/src/util/util.cpp",
+		"/Users/topjohnwu/DSnP/csv_generator.cpp",
+		"/Users/topjohnwu/Google 雲端硬碟/更新紀錄.txt",
+		"/Users/topjohnwu/DSnP/fraig/friag.sublime-project",
+		"/Users/topjohnwu/DSnP/fraig/src/util/make.util",
+		"/Users/topjohnwu/DSnP/fraig/src/Makefile.in",
+		"/Users/topjohnwu/DSnP/fraig/src/cir/cirCmd.h",
+		"/Users/topjohnwu/.config/mpv/mpv.conf",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW/additions/scripts/sense.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.5-update/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.5-update/update.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-S2-5.0.8(S)/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/Downloads/ElementalX-Port-m8-6.01.2-GPE-12-18-2015-08-51/anykernel.sh",
+		"/Users/topjohnwu/Downloads/ElementalX-Port-m8-6.01.2-GPE-12-18-2015-08-51/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW/additions/scripts/gpe.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW/additions/scripts/china.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/sprint/system/build.prop",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/verizon/system/build.prop",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/system/build.prop",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/META-INF/com/google/android/aroma-config",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/META-INF/com/google/android/aroma/changelog.txt",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/system/customize/ACC/default.xml",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/scripts/gpe.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/scripts/sense.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/scripts/china.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/setsense.sh",
+		"/Users/topjohnwu/android/Projects/test/META-INF/com/google/android/aroma-config",
+		"/Users/topjohnwu/android/Projects/test/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/Downloads/BETA-SuperSU-v2.64-20151220185127/META-INF/com/google/android/update-binary",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/setgpe.sh",
+		"/Users/topjohnwu/Downloads/updater-script",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/wipe.sh",
+		"/Users/topjohnwu/Downloads/SuperSU-v2.62-3-20151211162651/META-INF/com/google/android/update-binary",
+		"/Users/topjohnwu/Downloads/SuperSU-v2.62-3-20151211162651/common/launch_daemonsu.sh",
+		"/Users/topjohnwu/Downloads/SuperSU-v2.62-3-20151211162651/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/xposed-v79-sdk21-x86/flash-script.sh",
+		"/Users/topjohnwu/xposed-v79-sdk21-x86/runthis.sh",
+		"/Users/topjohnwu/test.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.5/additions/xposed/zip/flash-script.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.0/META-INF/com/google/android/aroma/changelog.txt",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.0/META-INF/com/google/android/aroma-config",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.0/additions/xposed/zip/flash-script.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.0/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.0/additions/verizon/system/build.prop",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.0/additions/sprint/system/build.prop",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.3.0/system/build.prop",
+		"/Users/topjohnwu/DSnP/hw7/dofiles/do2",
+		"/Users/topjohnwu/android/Projects/S.ROM-S2-2.5.8SE(T)/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/S.ROM-M8-S2-2.5.8SE(T)-Android-M-Sense7_GP-A9_/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/DSnP/hw7/dofiles/do3",
+		"/Users/topjohnwu/DSnP/hw7/mydo",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.0/META-INF/com/google/android/aroma-config",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.0/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.0/META-INF/com/google/android/aroma/changelog.txt",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.0/additions/mountsu.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.0/additions/wipe.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-S2-2.5.8SE(T)/re.tmp",
+		"/Users/topjohnwu/android/Projects/xposed/additions/xposed/zip/flash-script.sh",
+		"/Users/topjohnwu/android/Projects/xposed/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/Downloads/xposed-v78-sdk23-arm/META-INF/com/google/android/flash-script.sh",
+		"/Users/topjohnwu/DSnP/hw7/dofiles/do1",
+		"/Users/topjohnwu/Downloads/xposed-v78-sdk23-arm/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/ElementalX-m8-6.02-Sense-S.ROM/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/android/Projects/ElementalX-m8-6.02-Sense-S.ROM/META-INF/com/google/android/aroma-config",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.0/system/su.d/wp_mod.sh",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.2.0/system/su.d/permissive.sh",
+		"/Users/topjohnwu/DSnP/hw5/src/util/array.h",
+		"/Users/topjohnwu/DSnP/hw5/src/main/adtTest.h",
+		"/Users/topjohnwu/DSnP/hw5/src/main/adtTest.cpp",
+		"/Users/topjohnwu/DSnP/hw5/src/cmd/cmdParser.h",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.1.0/META-INF/com/google/android/aroma-config",
+		"/Users/topjohnwu/android/Projects/S.ROM-JW-4.1.0/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/hw7/src/util/util.h",
+		"/Users/topjohnwu/hw7/src/task/taskCmd.cpp",
+		"/Users/topjohnwu/hw7/src/task/taskCmd.h",
+		"/Users/topjohnwu/hw7/src/util/myHashSet.h",
+		"/Users/topjohnwu/hw7/src/util/myMinHeap.h",
+		"/Users/topjohnwu/hw7/src/task/taskMgr.h",
+		"/Users/topjohnwu/hw7/src/task/taskMgr.cpp",
+		"/Users/topjohnwu/hw7/src/util/util.cpp",
+		"/Users/topjohnwu/hw7/src/main/main.cpp",
+		"/Users/topjohnwu/hw7/src/util/rnGen.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/RSA/cipher.cpp",
+		"/Users/topjohnwu/android/Projects/S.ROM-S2-2.0.8X/META-INF/com/google/android/updater-script",
+		"/Users/topjohnwu/build.prop",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/cir/cirCmd.cpp",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/util/myString.cpp",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/main/main.cpp",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/util/util.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/cir/cirMgr.cpp",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/cir/cirMgr.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/cir/cirGate.cpp",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/cir/cirGate.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/cir/cirDef.h",
+		"/Users/topjohnwu/.bash_profile",
+		"/Users/topjohnwu/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw6/src/cir/cirCmd.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw5/src/Makefile.in",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw5/Makefile",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw5/src/main/adtTest.cpp",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw5/src/main/adtTest.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw5/src/util/bst.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw5/src/util/dlist.h",
+		"/Users/topjohnwu/Google 雲端硬碟/Program/DSnP/hw5/src/util/array.h"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"_fraig",
+			"test",
+			"mark",
+			"unlink",
+			"g-",
+			"g",
+			"hashdata",
+			"_idGlist[i]",
+			"getId",
+			"line",
+			"jw",
+			"m",
+			"undef",
+			"size_t",
+			"gateInfoList",
+			"print",
+			"getty",
+			"size_t",
+			"new",
+			";\n",
+			"pop(",
+			"erase",
+			"_right"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"replace",
+			"a-",
+			"a",
+			"g",
+			"_m",
+			"unsigned",
+			"info"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "friag.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
